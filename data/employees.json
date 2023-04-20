@@ -15,13 +15,15 @@
         {
             "id"    : 12341244, 
             "name"  : "Mark Martin", 
-            "ext"   : "mark@vectacorp.com", 
+            "ext"   : 5352,
+            "email" : "mark@vectacorp.com", 
             "department": "Sales"
         },
         {
             "id"    : 14545423,
             "name"  : "Robin Banks",
-            "ext"   : "robin@vectacorp.com", 
+            "ext"   : 7867,
+            "email" :  "robin@vectacorp.com", 
             "department" : "Marketing"
         },
         {

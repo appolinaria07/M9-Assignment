@@ -42,16 +42,16 @@ function buildGrid() {
     // REBUILDING THE ROW STRUCTURE
 
     fetchEmployees()
-        .then( employees => {
-            for (let employee of employees) {
+        .then( data => {
+            for (let employee of data.employees) {
                 tbody.innerHTML += 
                 `
                 <tr>
-                    <td>${employee[0]}</td>
-                    <td>${employee[1]}</td>
-                    <td>${employee[2]}</td>
-                    <td><a href="mailto:${employee[3]}">${employee[3]}</a></td>
-                    <td>${employee[4]}</td>
+                    <td>${employee.id}</td>
+                    <td>${employee.name}</td>
+                    <td>${employee.ext}</td>
+                    <td><a href="mailto:${employee.email}">${employee.email}</a></td>
+                    <td>${employee.department}</td>
                     <td><button class="btn btn-sm btn-danger delete">X</button></td>
                 </tr>
                 `
@@ -59,8 +59,7 @@ function buildGrid() {
             // BIND THE TBODY TO THE EMPLOYEE TABLE
             empTable.appendChild(tbody)
             // UPDATE EMPLOYEE COUNT
-            empCount.value = `(${employees.length})`
+            empCount.value = `(${data.employees.length})`
         })
-        .catch( e => console.log(e.message));
 
 }
